@@ -32,7 +32,7 @@ const Authors = () => {
               </div>
               <div className="author__info">
                 <h4>{name}</h4>
-                <p>{posts}</p>
+                <p>{posts} posts</p>
               </div>
             </Link>
           ))
