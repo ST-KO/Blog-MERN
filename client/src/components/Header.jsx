@@ -19,23 +19,23 @@ const Header = () => {
   return (
     <nav>
       <div className="container nav__container">
-        <Link to="/" className='nav__logo' onClick={() => setIsNavShowing(false)}>
+        <Link to="/" className='nav__logo' onClick={closeNavHandler}>
           <img src={Logo} alt="logo" />
         </Link>
         {
           isNavShowing && 
           <ul className='nav__menu'>
             <li>
-              <Link to='/profile/sdfd' onClick={() => setIsNavShowing(false)}>Eere sdfds</Link>
+              <Link to='/profile/sdfd' onClick={closeNavHandler}>Eere sdfds</Link>
             </li>
             <li>
-              <Link to='/create' onClick={() => setIsNavShowing(false)}>Create Post</Link>
+              <Link to='/create' onClick={closeNavHandler}>Create Post</Link>
             </li>
             <li>
-              <Link to='/authors' onClick={() => setIsNavShowing(false)}>Authors</Link>
+              <Link to='/authors' onClick={closeNavHandler}>Authors</Link>
             </li>
             <li>
-              <Link to='/logout' onClick={() => setIsNavShowing(false)}>Logout</Link>
+              <Link to='/logout' onClick={closeNavHandler}>Logout</Link>
             </li>
           </ul>
         }
