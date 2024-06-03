@@ -5,12 +5,17 @@ require("dotenv").config();
 const userRoutes = require("./routes/userRoutes.js");
 const postRoutes = require("./routes/postRoute.js");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
+const upload = require("express-fileupload");
+
 const app = express();
 
+// Middlewares
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(upload());
 
+app.use("/uploads", express.static(__dirname + "/uploads")); // To save avatar
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
