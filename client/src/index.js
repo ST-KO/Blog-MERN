@@ -19,11 +19,16 @@ import Dashboard from "./pages/Dashboard.jsx";
 import EditPost from "./pages/EditPost.jsx";
 import DeletePost from "./pages/DeletePost.jsx";
 import Logout from "./pages/Logout.jsx";
+import UserContextProvider from "./context/userContext.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <UserContextProvider>
+        <Layout />
+      </UserContextProvider>
+    ),
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
