@@ -8,7 +8,7 @@ import en from 'javascript-time-ago/locale/en.json';
 import ru from 'javascript-time-ago/locale/ru.json';
 
 TimeAgo.addDefaultLocale(en);
-TimeAgo.addDefaultLocale(ru);
+TimeAgo.addLocale(ru);
 
 const PostAuthor = ({createdAt, authorID}) => {
   
@@ -28,7 +28,7 @@ const PostAuthor = ({createdAt, authorID}) => {
   }, []);
   
   return (
-    <Link to={`/posts/users/sdf`} className='post__author'>
+    <Link to={`/posts/users/${authorID}`} className='post__author'>
         <div className="post__author-avatar">
             <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${author?.avatar}`} alt="author avatar" />
         </div>

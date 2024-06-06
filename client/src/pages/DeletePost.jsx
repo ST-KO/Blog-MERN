@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { UserContext } from '../context/userContext';
 
@@ -17,7 +17,7 @@ const DeletePost = () => {
   }, []);
   
   return (
-    <div>DeletePost</div>
+    <Link className='btn sm danger'>Delete</Link>
   );
 };
 
